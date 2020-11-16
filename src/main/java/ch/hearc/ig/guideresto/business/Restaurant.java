@@ -10,7 +10,9 @@ import java.util.Set;
 @Entity
 @Table(name="Restaurants")
 public class Restaurant {
+
     @Id
+    @Column(name="numero")
     private Integer id;
 
     @Column(name="nom")

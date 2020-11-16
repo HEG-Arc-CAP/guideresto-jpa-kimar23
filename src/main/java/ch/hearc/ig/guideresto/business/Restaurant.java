@@ -1,15 +1,36 @@
 package ch.hearc.ig.guideresto.business;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name="Restaurants")
 public class Restaurant {
+
+    @Id
+    @Column(name="numero")
     private Integer id;
+
+    @Column(name="nom")
     private String name;
+
+    //Même que BD, persisté par défaut
     private String description;
+
+    @Column(name="site_web")
     private String website;
+
+    // FK dans Commentaire
     private Set<Evaluation> evaluations;
+
+    @Column(name="adresse")
     private Localisation address;
+
+    // FK dans Restaurant
     private RestaurantType type;
 
     public Restaurant() {

@@ -1,10 +1,25 @@
 package ch.hearc.ig.guideresto.business;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="notes")
 public class Grade {
-    
+
+    @Id
+    @Column(name="numero")
     private Integer id;
+
+    @Column(name="note")
     private Integer grade;
+
+    //FK vers table Commentaire
     private CompleteEvaluation evaluation;
+
+    //FK vers table Criteres_evaluation
     private EvaluationCriteria criteria;
 
     public Grade() {
